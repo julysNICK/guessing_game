@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Center(
               child: Text(
-            "Memory Game",
+            "Jogo da Memória",
             style: TextStyle(
               color: Colors.white,
               fontSize: 40,
@@ -83,8 +84,7 @@ class _HomePageState extends State<HomePage> {
                           _game.matchCheck!
                               .add({index: _game.card_list[index]});
                         });
-                        print("tentativas:");
-                        print(tries);
+
                         if (_game.matchCheck!.length == 2) {
                           if (_game.matchCheck![0].values.first ==
                               _game.matchCheck![1].values.first) {
